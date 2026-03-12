@@ -1,0 +1,24 @@
+
+In add product to cart route you wrote
+
+ let result = await UserModel.findOneAndUpdate({email:emailOfUser},{$push:{cart:{prod:productId}}})
+
+But schema field name is product, not prod.
+
+So MongoDB stores this:
+
+cart:[
+  {
+    "prod":"ObjectId_here"
+  }
+]
+
+But mongoose expects:
+
+cart:[
+  {
+    "product":"ObjectId_here"
+  }
+]
+
+Because of this mismatch, populate can't work and you only see the reference.

@@ -1,0 +1,23 @@
+1. generate package.json
+    (npm init -y)
+
+2. create express appli (--> http server + other stuff) and call the server
+
+3. install mongoose and connect to mongodb server
+
+  rest api-- mongodb(database) native driver-->db server
+  rest api-- mongoose(tool to connect to db) odm(obj doc mapping) tool-->db server
+
+     [127.0.0.1 works in the place of localhost. its the ip address of it] 
+
+
+4. build user rest api
+       -create user
+       -read all users
+       -read a user by id
+       -update a user by id
+       -delete a user by id
+
+5. create schema and model of the resource[user]
+
+6. create user api and define routes
