@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #F4C2C2;
+}
+
+h1{
+    color:#f05050;
+    text-align: center;
+    padding: 50px;
+    border: 7px plum dashed;
+    margin: 20px;
+    font-family: "Bitcount Grid Double Ink", system-ui;
+}
+img{
+    display: block;    
+    margin: auto;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    border-style: dashed;
+}
+p{
+    font-size: 20px;
+    font-family:monospace
+}
+
+
+.head1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+}
+.head2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+h2{
+    font-size: 50px;
+}
