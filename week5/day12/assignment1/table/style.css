@@ -1,25 +1,37 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 table {
-    width: 70px;
-    margin: auto;
-    margin-top: 200px;
-    text-align: center;
+  border-collapse: collapse;
+  width: 600px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-table,th,td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 10px;
+th, td {
+  border: 1px solid black;
+  padding: 8px;
 }
 
-th[colspan] {
-    text-align: left;
+.title {
+  font-size: 18px;
+  font-weight: bold;
 }
-th.table2 {
-    text-align: center;
+
+.subtitle {
+  font-weight: bold;
+}
+
+.footer {
+  font-weight: bold;
+}
+
+
+.tables{
+display: flex;
+flex-direction: column;
 }
