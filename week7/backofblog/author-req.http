@@ -1,0 +1,60 @@
+###Register User
+POST http://localhost:5000/auth/users
+Content-Type: application/json
+
+{
+  "firstName": "",
+  "lastName": "",
+  "email": "",
+  "password": "",
+  "role": "",
+  "profileImageURL": " "
+}
+
+
+### Create new Article
+POST http://localhost:5000/author-api/article
+Content-Type: application/json
+
+{
+    "author" : "",
+    "title" : "",
+    "category" : "",
+    "content" : ""
+}
+
+###Login User
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email" : "",
+  "password" : ""
+}
+
+
+### author logout
+GET http://localhost:5000/auth/logout
+
+### read own articles
+GET http://localhost:4000/localhost:5000/author-api/article
+
+###update article
+PUT http://localhost:5000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"",
+    "title":"",
+    "content":"",
+    "category":""
+}
+
+### Delete / restore article
+PATCH http://localhost:5000/author-api/article
+Content-Type: application/json
+
+{
+  "articleId":"",
+  "isArticleActive":true
+}

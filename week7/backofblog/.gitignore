@@ -1,0 +1,29 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables 
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+
+# OS / system files
+.DS_Store
+Thumbs.db
+
+# Build artifacts 
+dist/
+build/
+
+# Coverage / testing outputs
+coverage/
+.nyc_output/
+
+# Temporary uploads (Multer, Cloudinary cache)
+uploads/
+temp/
+
+# Editor settings
+.vscode/

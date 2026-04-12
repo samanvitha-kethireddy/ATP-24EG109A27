@@ -1,0 +1,66 @@
+### Register User
+POST http://localhost:5000/auth/users
+Content-Type: application/json
+
+{
+  "firstName": "author2",
+  "lastName": "",
+  "email": "author2@mail.com",
+  "role":"AUTHOR",
+  "password": "author2",
+  "profileImageUrl": ""
+}
+
+
+### Create new Article
+POST http://localhost:5000/author-api/article
+Content-Type: application/json
+
+{
+  "author":"",
+  "title":"",
+  "category":"",
+  "content":""
+  
+}
+
+
+
+### Author Login
+POST http://localhost:4000/auth/login
+Content-Type: application/json
+
+{
+  "email":"",
+  "password":""
+}
+
+
+### Author logout
+GET http://localhost:5000/auth/logout
+
+
+### Read own articles
+GET http://localhost:5000/author-api/articles
+
+### Update article by author
+PUT http://localhost:5000/author-api/articles
+Content-Type: application/json
+
+{
+  "articleId":"",
+  "title":"",
+  "category":"",
+  "content":""
+  
+}
+
+
+### Delete / restore article
+PATCH http://localhost:5000/author-api/articles
+Content-Type: application/json
+
+{
+  "articleId":"",
+  "isArticleActive":true
+}

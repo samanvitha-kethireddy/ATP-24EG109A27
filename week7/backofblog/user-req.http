@@ -1,0 +1,47 @@
+###Register User
+POST http://localhost:5000/auth/users
+Content-Type: application/json
+
+{
+  "firstName": "",
+  "lastName": "",
+  "email": "",
+  "password": "",
+  "role": "",
+  "profileImageURL": " "
+}
+
+###Login User
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email" : "",
+  "password" : ""
+}
+
+### user logout
+GET http://localhost:5000/auth/logout
+
+### Read articles of all authors
+GET http://localhost:5000/user-api/articles
+
+### Add comment by user to an article
+PUT http://localhost:5000/user-api/articles
+Content-Type: application/json
+
+{
+  "articleId":"",
+  "comment":""
+}
+
+
+
+### Change password
+PUT http://localhost:5000/auth/password
+Content-Type: application/json
+
+{
+  "currentPassword":"",
+  "newPassword":""
+}
