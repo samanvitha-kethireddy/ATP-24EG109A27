@@ -58,7 +58,7 @@ function UserProfile() {
     navigate("/login");
   };
 
-  const navigateToArticleByID = (articleObj) => {
+  const navigateToArticleById = (articleObj) => {
     navigate(`/article/${articleObj._id}`, {
       state: articleObj,
     });
@@ -128,7 +128,7 @@ function UserProfile() {
                   </div>
 
                   {/* ACTION */}
-                  <button className={`${ghostBtn} mt-auto pt-4`} onClick={() => navigateToArticleByID(articleObj)}>
+                  <button className={`${ghostBtn} mt-auto pt-4`} onClick={() => navigateToArticleById(articleObj)}>
                     Read Article →
                   </button>
                 </div>

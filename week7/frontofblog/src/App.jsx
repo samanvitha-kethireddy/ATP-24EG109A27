@@ -8,7 +8,7 @@ import AuthorProfile from "./components/AuthorProfile";
 import AuthorArticles from "./components/AuthorArticles";
 import EditArticle from "./components/EditArticle";
 import WriteArticles from "./components/WriteArticles";
-import ArticleByID from "./components/ArticleByID";
+import ArticleById from "./components/ArticleById";
 import { Toaster } from "react-hot-toast";
 import Unauthorized from "./components/Unauthorized";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -57,7 +57,7 @@ function App() {
           ),
         },
 
-        { path: "article/:id", element: <ArticleByID /> },
+        { path: "article/:id", element: <ArticleById /> },
         { path: "edit-article", element: <EditArticle /> },
         { path: "unauthorized", element: <Unauthorized /> },
       ],
