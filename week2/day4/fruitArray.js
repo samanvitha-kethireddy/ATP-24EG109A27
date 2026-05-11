@@ -14,7 +14,7 @@ Goal: Learn array copying with spread
 -> Print both arrays
  ["apple", "banana"]
 ["apple", "banana", "orange"]
- 👉 Original array should NOT change.*/
+ Original array should NOT change.*/
 
 let fruits = ["apple", "banana"];
 let moreFruits=[...fruits,"orange"];

@@ -58,7 +58,7 @@ let b2= new Book("twisted", "ana", 250, true);
 let b3= new Book("red", "lilly", 400, true);
 let b4= new Book("blue wall", "jasmine", 300, true);
 let b5= new Book("black sheep", "pari", 600, true);
-//console.log(b1,b2,b3,b4,b5)
+console.log(`info of all books: ` , b1,b2,b3,b4,b5)
 b1.borrow()
 b2.borrow()
 b1.returnBook()
