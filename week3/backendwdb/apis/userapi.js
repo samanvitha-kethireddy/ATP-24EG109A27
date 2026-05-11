@@ -1,6 +1,6 @@
 //create mini-express appli(they dont have http instance(server)) (seperate routes)
 import exp from 'express'
-import { UserModel } from '../Models/userModel.js';
+import { userModel } from '../Models/userModel.js';
 import { compare, hash } from 'bcryptjs';
 import jwt from 'jsonwebtoken'
 import { verifyToken } from '../Middleware/verifytoken.js';

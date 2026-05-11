@@ -26,4 +26,4 @@ const prodSchema = new Schema({
 });
 
 // generate prodModel
-export const ProdModel = model("prod", prodSchema);
+export const prodModel = model("prod", prodSchema);
