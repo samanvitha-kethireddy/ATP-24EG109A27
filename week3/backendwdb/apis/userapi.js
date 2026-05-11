@@ -1,9 +1,9 @@
 //create mini-express appli(they dont have http instance(server)) (seperate routes)
 import exp from 'express'
-import { UserModel } from '../models/userModel.js';
+import { UserModel } from '../Models/userModel.js';
 import { compare, hash } from 'bcryptjs';
 import jwt from 'jsonwebtoken'
-import { verifyToken } from '../middleware/verifytoken.js';
+import { verifyToken } from '../Middleware/verifytoken.js';
 const{sign} = jwt
 export const userApp= exp.Router()
 
