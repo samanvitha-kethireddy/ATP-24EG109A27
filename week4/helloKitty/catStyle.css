@@ -1,0 +1,59 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background */
+body {
+  background-color: #F4C2C2;
+  font-family: monospace;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Main heading */
+h1 {
+  color: #f05050;
+  text-align: center;
+  padding: 30px;
+  border: 5px dashed plum;
+  margin: 20px auto;
+  font-family: "Bitcount Grid Double Ink", system-ui;
+  border-radius: 15px;
+  background-color: #fff8f8;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Image */
+img {
+  display: block;
+  margin: 20px auto;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  border: 4px dashed #f05050;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Paragraphs */
+p {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+/* Subheadings */
+h2 {
+  font-size: 32px;
+  margin-top: 25px;
+  color: #333;
+}
+
+.head1 {
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+}
+
+.head2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
