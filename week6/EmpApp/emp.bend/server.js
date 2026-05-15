@@ -9,7 +9,7 @@ const app = exp()
 //add cors middleware
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173", "https://samanvitha-empapp.vercel.app/"],
   }),
 );
 
@@ -24,9 +24,9 @@ app.use("/api", empApp);
 //connect to db server
 async function connectDB(){
     try{
-        await connect("mongodb://localhost:27017/mydb")
+        await connect(process.env.MONGODB_URI)
         console.log("db connection successful")
-        const port = 4000;
+        const port = 4000 || process.env.PORT;
         app.listen(port, ()=>console.log(`server listening to ${port}`))
     } 
     catch(err){
