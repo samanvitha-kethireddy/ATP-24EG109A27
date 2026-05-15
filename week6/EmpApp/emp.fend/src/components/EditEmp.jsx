@@ -30,8 +30,9 @@ function EditEmp() {
   const saveModifiedEmp = async (modifiedEmp) => {
     try {
       setLoading(true);
+      const API = import.meta.env.VITE_API_URL;
       const res = await axios.put(
-        `${process.env.REACT_PUBLIC_API_URL}/api/emp/${state._id}`,
+        `${API}/emp/${state._id}`,
         modifiedEmp
       );
       if (res.status === 200) {
