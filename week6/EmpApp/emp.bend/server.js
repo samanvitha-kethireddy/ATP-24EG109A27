@@ -10,9 +10,12 @@ const app = exp()
 app.use(
   cors({
     origin: ["http://localhost:5173", "https://samanvitha-empapp.vercel.app/"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], 
+    credentials: true
   }),
 );
 
+app.options("*", cors());
 //add body parser
 app.use(exp.json())
 
