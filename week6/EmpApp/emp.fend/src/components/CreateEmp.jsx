@@ -42,8 +42,6 @@ function CreateEmp() {
     }
   };
 
-  console.log(error);
-
   if (loading) {
     return <p className="text-center text-4xl">Loading....</p>;
   }
