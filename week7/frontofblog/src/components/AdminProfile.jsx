@@ -32,10 +32,11 @@ export default function AdminProfile() {
   }, []);
 
   // Toggle status
+  const API = import.meta.env.VITE_API_URL;
   const toggleUserStatus = async (id, currentStatus) => {
     try {
       await axios.patch(
-        `http://localhost:5000/admin-api/block/${id}`,
+        `${API}/admin-api/block/${id}`,
         { isUserActive: !currentStatus },
         { withCredentials: true }
       );

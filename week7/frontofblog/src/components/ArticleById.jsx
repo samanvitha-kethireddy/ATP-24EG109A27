@@ -46,8 +46,9 @@ function ArticleById() {
 
     const getArticle = async () => {
       setLoading(true);
+      const API = import.meta.env.VITE_API_URL;
       try {
-        const res = await axios.get(`/user-api/article/${id}`);
+        const res = await axios.get(`${API}/user-api/article/${id}`);
         setArticle(res.data.payload);
       } catch (err) {
         setError(err.response?.data?.error);
@@ -71,9 +72,9 @@ function ArticleById() {
     const newStatus = !article.isArticleActive;
     const confirmMsg = newStatus ? "Restore this article?" : "Delete this article?";
     if (!window.confirm(confirmMsg)) return;
-
+    const API = import.meta.env.VITE_API_URL;
     try {
-      const res = await axios.patch("/author-api/articles", {
+      const res = await axios.patch(`${API}/author-api/articles`, {
         articleId: article._id,
         isArticleActive: newStatus,
       });
@@ -96,8 +97,8 @@ function ArticleById() {
 
   const addComment = async (commentObj) => {
     commentObj.articleId = article._id;
-
-    let res = await axios.put("/user-api/articles", commentObj);
+    const API = import.meta.env.VITE_API_URL;
+    let res = await axios.put(`${API}/user-api/articles`, commentObj);
 
     if (res.status === 200) {
       setArticle(res.data.payload);
