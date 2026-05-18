@@ -15,7 +15,9 @@ const app = exp();
 // CORS
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173",
+      "https://sam-blogapp.vercel.app/"         
+    ],
     credentials: true,
   })
 );
@@ -33,7 +35,7 @@ app.use("/common-api", commonApp);
 // DB connect
 const connectDB = async () => {
   try {
-    await connect(process.env.DB_URL);
+    await connect(process.env.MONGODB_URI);
     console.log("DB server connected");
 
     const port = process.env.PORT || 5000;
