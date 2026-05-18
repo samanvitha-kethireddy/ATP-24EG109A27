@@ -17,7 +17,7 @@ app.use(
   cors({
     origin: ["http://localhost:5173",
       "https://sam-blogapp.vercel.app"         
-    ],
+    ], 
     credentials: true,
   })
 );
