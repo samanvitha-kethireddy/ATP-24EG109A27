@@ -1,9 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
 
-axios.defaults.baseURL = API_BASE_URL;
-axios.defaults.withCredentials = true;
-
 export const useAuth = create((set) => ({
   currentUser: null,
   loading: false,
