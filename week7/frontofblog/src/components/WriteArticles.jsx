@@ -30,8 +30,9 @@ function WriteArticles() {
     setLoading(true);
 
     try {
+       const API = import.meta.env.VITE_API_URL;
       const res = await axios.post(
-        "http://localhost:5000/author-api/article",
+        `${API}/author-api/article`,
         articleObj,
         { withCredentials: true }
       );

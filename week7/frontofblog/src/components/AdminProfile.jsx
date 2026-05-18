@@ -14,7 +14,8 @@ export default function AdminProfile() {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/admin-api/details", {
+      const API = import.meta.env.VITE_API_URL;
+      const res = await axios.get(`${API}/admin-api/details`, {
         withCredentials: true,
       });
       setUsers(res.data.payload);

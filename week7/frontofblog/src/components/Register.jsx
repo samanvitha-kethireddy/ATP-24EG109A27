@@ -42,11 +42,11 @@ function Register() {
 
     try {
       setLoading(true);
-
+      const API = import.meta.env.VITE_API_URL;
       let res = await axios.post(
-        "http://localhost:5000/common-api/users", 
+        `${API}/common-api/users`,
         formData,
-        { withCredentials: true }
+        { withCredentials: true },
       );
 
       if (res.status === 201) {
@@ -61,7 +61,9 @@ function Register() {
   };
 
   return (
-    <div className={`${pageBackground} flex items-center justify-center py-16 px-4`}>
+    <div
+      className={`${pageBackground} flex items-center justify-center py-16 px-4`}
+    >
       <div className={formCard}>
         <h2 className={formTitle}>Create an Account</h2>
 
@@ -73,12 +75,20 @@ function Register() {
 
             <div className="flex gap-6 mt-1">
               <label className="flex items-center gap-2">
-                <input type="radio" value="USER" {...register("role", { required: true })} />
+                <input
+                  type="radio"
+                  value="USER"
+                  {...register("role", { required: true })}
+                />
                 User
               </label>
 
               <label className="flex items-center gap-2">
-                <input type="radio" value="AUTHOR" {...register("role", { required: true })} />
+                <input
+                  type="radio"
+                  value="AUTHOR"
+                  {...register("role", { required: true })}
+                />
                 Author
               </label>
             </div>
@@ -87,16 +97,34 @@ function Register() {
           <div className={divider} />
 
           <div className="flex gap-4 mb-4">
-            <input placeholder="First name" className={inputClass} {...register("firstName", { required: true })} />
-            <input placeholder="Last name" className={inputClass} {...register("lastName")} />
+            <input
+              placeholder="First name"
+              className={inputClass}
+              {...register("firstName", { required: true })}
+            />
+            <input
+              placeholder="Last name"
+              className={inputClass}
+              {...register("lastName")}
+            />
           </div>
 
           <div className={formGroup}>
-            <input type="email" placeholder="Email" className={inputClass} {...register("email", { required: true })} />
+            <input
+              type="email"
+              placeholder="Email"
+              className={inputClass}
+              {...register("email", { required: true })}
+            />
           </div>
 
           <div className={formGroup}>
-            <input type="password" placeholder="Password" className={inputClass} {...register("password", { required: true })} />
+            <input
+              type="password"
+              placeholder="Password"
+              className={inputClass}
+              {...register("password", { required: true })}
+            />
           </div>
 
           <div className={formGroup}>
@@ -110,7 +138,9 @@ function Register() {
                 }
               }}
             />
-            {preview && <img src={preview} className="w-20 h-20 rounded-full mt-2" />}
+            {preview && (
+              <img src={preview} className="w-20 h-20 rounded-full mt-2" />
+            )}
           </div>
 
           <button type="submit" className={submitBtn}>
@@ -119,8 +149,7 @@ function Register() {
         </form>
 
         <p className={`${mutedText} text-center mt-5`}>
-          Already have an account?{" "}
-          <NavLink to="/login">Login</NavLink>
+          Already have an account? <NavLink to="/login">Login</NavLink>
         </p>
       </div>
     </div>
