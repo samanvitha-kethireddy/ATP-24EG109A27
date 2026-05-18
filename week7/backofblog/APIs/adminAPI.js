@@ -1,6 +1,6 @@
 import exp from "express";
 import { UserModel } from "../models/UserModel.js";
-import { verifyToken } from "../middlewares/VerifyToken.js";
+import { verifyToken } from "../middlewares/verifyToken.js";
 
 export const adminApp = exp.Router();
 
