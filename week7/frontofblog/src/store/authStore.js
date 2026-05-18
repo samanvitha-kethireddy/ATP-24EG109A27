@@ -1,8 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL;
-
 axios.defaults.baseURL = API_BASE_URL;
 axios.defaults.withCredentials = true;
 
@@ -21,8 +19,8 @@ export const useAuth = create((set) => ({
         isAuthenticated: false,
         error: null,
       });
-
-      const res = await axios.post("/common-api/login", userCred);
+      const API = import.meta.env.VITE_API_URL;
+      const res = await axios.post(`${API}/common-api/login`, userCred);
 
       if (res.status === 200) {
         set({
@@ -46,8 +44,8 @@ export const useAuth = create((set) => ({
   logout: async () => {
     try {
       set({ loading: true });
-
-      const res = await axios.get("/common-api/logout");
+      const API = import.meta.env.VITE_API_URL;
+      const res = await axios.get(`${API}/common-api/logout`);
 
       if (res.status === 200) {
         set({
@@ -71,8 +69,8 @@ export const useAuth = create((set) => ({
   checkAuth: async () => {
     try {
       set({ loading: true });
-
-      const res = await axios.get("/common-api/check-auth");
+      const API = import.meta.env.VITE_API_URL;
+      const res = await axios.get(`${API}/common-api/check-auth`);
 
       set({
         currentUser: res.data?.payload,
