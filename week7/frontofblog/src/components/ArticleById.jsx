@@ -48,7 +48,7 @@ function ArticleById() {
       setLoading(true);
       const API = import.meta.env.VITE_API_URL;
       try {
-        const res = await axios.get(`${API}/user-api/article/${id}`);
+        const res = await axios.get(`${API}/user-api/article/${id}` ,{withCredentials:true});
         setArticle(res.data.payload);
       } catch (err) {
         setError(err.response?.data?.error);
@@ -74,7 +74,7 @@ function ArticleById() {
     if (!window.confirm(confirmMsg)) return;
     const API = import.meta.env.VITE_API_URL;
     try {
-      const res = await axios.patch(`${API}/author-api/articles`, {
+      const res = await axios.patch(`${API}/author-api/articles`,{withCredentials:true},{
         articleId: article._id,
         isArticleActive: newStatus,
       });
@@ -98,7 +98,7 @@ function ArticleById() {
   const addComment = async (commentObj) => {
     commentObj.articleId = article._id;
     const API = import.meta.env.VITE_API_URL;
-    let res = await axios.put(`${API}/user-api/articles`, commentObj);
+    let res = await axios.put(`${API}/user-api/articles`, commentObj ,{withCredentials:true});
 
     if (res.status === 200) {
       setArticle(res.data.payload);
