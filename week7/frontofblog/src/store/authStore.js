@@ -1,3 +1,106 @@
+// import { create } from "zustand";
+// import axios from "axios";
+
+// export const useAuth = create((set) => ({
+//   currentUser: null,
+//   loading: false,
+//   isAuthenticated: false,
+//   error: null,
+
+//   // LOGIN
+//   login: async (userCred) => {
+//     try {
+//       set({
+//         loading: true,
+//         currentUser: null,
+//         isAuthenticated: false,
+//         error: null,
+//         withCredentials: true,
+//       });
+//       const API = import.meta.env.VITE_API_URL;
+//       const res = await axios.post(`${API}/common-api/login`, userCred);
+
+//       if (res.status === 200) {
+//         set({
+//           currentUser: res.data?.payload,
+//           loading: false,
+//           isAuthenticated: true,
+//           error: null,
+//         });
+//       }
+//     } catch (err) {
+//       set({
+//         loading: false,
+//         isAuthenticated: false,
+//         currentUser: null,
+//         error: err.response?.data?.message || "Login failed",
+//       });
+//     }
+//   },
+
+//   // LOGOUT
+//   logout: async () => {
+//     try {
+//       set({ loading: true });
+//       const API = import.meta.env.VITE_API_URL;
+//       const res = await axios.get(`${API}/common-api/logout`);
+//        {withCredentials: true}
+//       if (res.status === 200) {
+//         set({
+//           currentUser: null,
+//           isAuthenticated: false,
+//           error: null,
+//           loading: false,
+//         });
+//       }
+//     } catch (err) {
+//       set({
+//         loading: false,
+//         isAuthenticated: false,
+//         currentUser: null,
+//         error: err.response?.data?.message || "Logout failed",
+//       });
+//     }
+//   },
+
+  
+//   checkAuth: async () => {
+//     try {
+//       set({ loading: true });
+//       const API = import.meta.env.VITE_API_URL;
+//       const res = await axios.get(`${API}/common-api/check-auth`), {withCredentials: true };
+
+//       set({
+//         currentUser: res.data?.payload,
+//         isAuthenticated: true,
+//         loading: false,
+//       });
+//     } catch (err) {
+//       if (err.response?.status === 401) {
+//         set({
+//           currentUser: null,
+//           isAuthenticated: false,
+//           loading: false,
+//         });
+//         return;
+//       }
+
+//       set({
+//         loading: false,
+//         error: "Something went wrong",
+//       });
+//     }
+//   },
+// }));
+
+
+
+
+
+
+
+
+
 import { create } from "zustand";
 import axios from "axios";
 
@@ -10,14 +113,11 @@ export const useAuth = create((set) => ({
   // LOGIN
   login: async (userCred) => {
     try {
-      set({
-        loading: true,
-        currentUser: null,
-        isAuthenticated: false,
-        error: null,
-      });
+      set({ loading: true, currentUser: null, isAuthenticated: false, error: null });
       const API = import.meta.env.VITE_API_URL;
-      const res = await axios.post(`${API}/common-api/login`, userCred);
+      const res = await axios.post(`${API}/common-api/login`, userCred, {
+        withCredentials: true,
+      });
 
       if (res.status === 200) {
         set({
@@ -42,7 +142,9 @@ export const useAuth = create((set) => ({
     try {
       set({ loading: true });
       const API = import.meta.env.VITE_API_URL;
-      const res = await axios.get(`${API}/common-api/logout`);
+      const res = await axios.get(`${API}/common-api/logout`, {
+        withCredentials: true,
+      });
 
       if (res.status === 200) {
         set({
@@ -62,12 +164,14 @@ export const useAuth = create((set) => ({
     }
   },
 
-  
+  // CHECK AUTH
   checkAuth: async () => {
     try {
       set({ loading: true });
       const API = import.meta.env.VITE_API_URL;
-      const res = await axios.get(`${API}/common-api/check-auth`);
+      const res = await axios.get(`${API}/common-api/check-auth`, {
+        withCredentials: true,
+      });
 
       set({
         currentUser: res.data?.payload,
@@ -76,18 +180,10 @@ export const useAuth = create((set) => ({
       });
     } catch (err) {
       if (err.response?.status === 401) {
-        set({
-          currentUser: null,
-          isAuthenticated: false,
-          loading: false,
-        });
+        set({ currentUser: null, isAuthenticated: false, loading: false });
         return;
       }
-
-      set({
-        loading: false,
-        error: "Something went wrong",
-      });
+      set({ loading: false, error: "Something went wrong" });
     }
   },
 }));
